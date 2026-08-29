@@ -1,7 +1,7 @@
 pipeline {
 
     agent {
-        label 'my-slave'
+        label 'myslave'
     }
 
     stages {
@@ -20,7 +20,7 @@ pipeline {
             }
         }
 
-        stage('Remove Old Containers') {
+        stage('Cleanup') {
             steps {
                 sh 'docker rm -f auth-container || true'
                 sh 'docker rm -f products-container || true'
@@ -47,3 +47,4 @@ pipeline {
             }
         }
     }
+}
