@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: auth-container
-        image: manishh08/auth-service
+        image: manishh08/auth-service:latest
 
         ports:
         - containerPort: 5001
