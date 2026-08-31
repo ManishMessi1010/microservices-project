@@ -47,5 +47,31 @@ pipeline {
                 }
             }
         }
+        
+        stage('Deploy to EKS') {
+            steps {
+
+                sh '''
+                kubectl apply -f k8s/
+                '''
+
+                sh '''
+                kubectl get deployments
+                '''
+
+                sh '''
+                kubectl get pods
+                '''
+            }
+        }
+
+        stage('Verify Docker Images') {
+            steps {
+
+                sh '''
+                docker images
+                '''
+            }
+        }
     }
 }
