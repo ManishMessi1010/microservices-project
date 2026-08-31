@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: order-container
-        image: manishh08/order-service:v1
+        image: manishh08/order-service:latest
 
         ports:
         - containerPort: 5003
