@@ -62,6 +62,10 @@ pipeline {
                 sh '''
                 kubectl get pods
                 '''
+
+                sh '''
+                kubectl get services
+                '''
             }
         }
 
