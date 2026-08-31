@@ -16,16 +16,16 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 sh 'docker build -t manishh08/auth-service ./auth-service'
-                sh 'docker build -t manishh08/product-service ./products-service'
-                sh 'docker build -t manishh08/order-service ./orders-service'
+                sh 'docker build -t manishh08/product-service ./product-service'
+                sh 'docker build -t manishh08/order-service ./order-service'
             }
         }
 
         stage('Cleanup') {
             steps {
                 sh 'docker rm -f auth-container || true'
-                sh 'docker rm -f products-container || true'
-                sh 'docker rm -f orders-container || true'
+                sh 'docker rm -f product-container || true'
+                sh 'docker rm -f order-container || true'
             }
         }
 
