@@ -16,8 +16,8 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 sh 'docker build -t manishh08/auth-service ./auth-service'
-                sh 'docker build -t manishh08/products-service ./products-service'
-                sh 'docker build -t manishh08/orders-service ./orders-service'
+                sh 'docker build -t manishh08/product-service ./products-service'
+                sh 'docker build -t manishh08/order-service ./orders-service'
             }
         }
 
@@ -40,8 +40,8 @@ pipeline {
                     sh 'echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin'
 
                     sh 'docker push manishh08/auth-service'
-                    sh 'docker push manishh08/products-service'
-                    sh 'docker push manishh08/orders-service'
+                    sh 'docker push manishh08/product-service'
+                    sh 'docker push manishh08/order-service'
 
                     sh 'docker logout'
                 }
