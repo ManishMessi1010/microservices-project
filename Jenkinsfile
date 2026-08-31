@@ -32,7 +32,7 @@ pipeline {
         stage('Push Images to DockerHub') {
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'manish-dockerhub',
+                    credentialsId: 'dockerhub',
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
