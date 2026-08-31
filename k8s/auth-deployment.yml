@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: auth-container
-        image: discoverdevops/auth-service:v1
+        image: manishh08/auth-service:v1
 
         ports:
         - containerPort: 5001
