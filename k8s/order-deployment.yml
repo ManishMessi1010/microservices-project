@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: order-container
-        image: discoverdevops/order-service:v1
+        image: manishh08/order-service:v1
 
         ports:
         - containerPort: 5003
